@@ -36,9 +36,16 @@ if ($row == 1) {
         header('Location: ../');
         exit();
     } else {
-        $_SESSION['conta_cadastrada'] = true;
-        header('Location: ../');
-        exit();
+        $insert_perfil = insertPerfil($conexao, $nome);
+        if (!$insert_perfil) {
+            $_SESSION['nao_autenticado'] = true;
+            header('Location: ../');
+            exit();
+        } else {
+            $_SESSION['conta_cadastrada'] = true;
+            header('Location: ../');
+            exit();
+        }
     }
 } else {
     $_SESSION['nao_autenticado'] = true;
