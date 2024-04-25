@@ -36,6 +36,15 @@ session_start();
   <!-- Template Main CSS File -->
   <link href="Pages/assets/css/style.css" rel="stylesheet">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTY8H0NPZR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-CTY8H0NPZR');
+  </script>
 </head>
 
 <body>
