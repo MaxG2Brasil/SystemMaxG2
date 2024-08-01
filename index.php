@@ -3,6 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_erros', 1);
 error_reporting(E_ALL);
 session_start();
+
+include('Auth/Cookie/load.php');
 ?>
 
 <!DOCTYPE html>
@@ -40,9 +42,12 @@ session_start();
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTY8H0NPZR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
-  
+
     gtag('config', 'G-CTY8H0NPZR');
   </script>
 </head>
@@ -87,7 +92,7 @@ session_start();
                   <?php
                   endif;
                   unset($_SESSION['nao_autenticado']);
-                  ?> 
+                  ?>
 
                   <?php
                   if (isset($_SESSION['erro_interno'])) :
@@ -103,9 +108,9 @@ session_start();
                   <?php
                   endif;
                   unset($_SESSION['erro_interno']);
-                  ?> 
+                  ?>
 
-                  <form action="Auth/Login/php/login.php" class="row g-3 needs-validation" method="POST"  novalidate>
+                  <form action="Auth/Login/php/login.php" class="row g-3 needs-validation" method="POST" novalidate>
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Nome de Usuario:</label>
